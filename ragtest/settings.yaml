@@ -22,10 +22,10 @@ embed_graph:
 embeddings:
   async_mode: threaded
   llm:
-    api_base: http://localhost:11434/v1
+    api_base: http://ollama-api.bshefl2.bs.informatik.uni-siegen.de/v1
     api_key: ${GRAPHRAG_API_KEY}
     concurrent_requests: 10
-    model: nomic-embed-text
+    model: nomic-embed-text:latest
     type: openai_embedding
 encoding_model: cl100k_base
 entity_extraction:
@@ -40,15 +40,14 @@ global_search:
   concurrency: 32
 input:
   base_dir: input
-  file_encoding: utf-8
-  file_pattern: .*\.txt$
-  file_type: text
+  file_encoding: ISO-8859-1
+  file_type: csv
   type: file
 llm:
-  api_base: http://localhost:11434/v1
+  api_base: http://ollama-api.bshefl2.bs.informatik.uni-siegen.de/v1
   api_key: ${GRAPHRAG_API_KEY}
   concurrent_requests: 10
-  model: mistral:7b
+  model: mistral:latest
   model_supports_json: true
   type: openai_chat
 local_search: null

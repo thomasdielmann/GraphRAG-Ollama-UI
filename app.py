@@ -410,10 +410,12 @@ def send_message(query_type, query, history, system_message, temperature, max_to
 
 def fetch_ollama_models():
     try:
-        response = requests.get("http://localhost:11434/api/tags")
+        response = requests.get("http://ollama-api.bshefl2.bs.informatik.uni-siegen.de/api/tags")
+        print(response.text)
         if response.status_code == 200:
             models = response.json()
             return [model['name'] for model in models['models']]
+        
         else:
             return ["Error fetching models"]
     except Exception as e:
@@ -922,4 +924,4 @@ demo = demo.queue()
 
 
 if __name__ == "__main__":
-    demo.launch(share=True, reload=False)
+    demo.launch(share=True)

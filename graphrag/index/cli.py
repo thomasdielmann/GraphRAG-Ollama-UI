@@ -159,7 +159,7 @@ def index_cli(
             asyncio.run(execute())
 
     _run_workflow_async()
-    progress_reporter.stop()
+    #progress_reporter.stop()
     if encountered_errors:
         progress_reporter.error(
             "Errors occurred during the pipeline run, see logs for more details."

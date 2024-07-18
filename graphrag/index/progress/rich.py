@@ -124,15 +124,15 @@ class RichProgressReporter(ProgressReporter):
 
     def error(self, message: str) -> None:
         """Report an error."""
-        self._console.print(f"❌ [red]{message}[/red]")
+        self._console.print(f"{message}")
 
     def warning(self, message: str) -> None:
         """Report a warning."""
-        self._console.print(f"⚠️ [yellow]{message}[/yellow]")
+        self._console.print(f"{message}")
 
     def success(self, message: str) -> None:
         """Report success."""
-        self._console.print(f"🚀 [green]{message}[/green]")
+        self._console.print(f"{message}")
 
     def info(self, message: str) -> None:
         """Report information."""
